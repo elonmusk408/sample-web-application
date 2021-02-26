@@ -24,8 +24,7 @@ pipeline{
 			 stage ('Sonar') {
                     steps {
                         build()	
-		    }	
-             
-		
+		    }	           
            }	       	     	         
+}
 }
