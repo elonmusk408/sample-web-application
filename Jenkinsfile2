@@ -20,10 +20,12 @@ pipeline{
                     steps {
                         filterLogs ('WARNING', 4)
                     }
+		 }
 			 stage ('Sonar') {
                     steps {
-                        build()		 
-                }
+                        build()	
+		    }	
+             
 		
            }	       	     	         
 }
