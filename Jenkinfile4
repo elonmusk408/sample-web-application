@@ -16,7 +16,7 @@ pipeline{
                	     }  
                  }	
                  
-            stage('sonar') {
+            stage('sonar-scanner') {
                        steps {
                           scanner()
 }
