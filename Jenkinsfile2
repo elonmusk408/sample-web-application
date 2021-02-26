@@ -16,11 +16,13 @@ pipeline{
                	     }  
                  }	
                  
-                 stage ('Check logs') {
-                    steps {
-                        filterLogs ('WARNING', 4)
-                    }
-		 }
+            stage('sonar') {
+                       steps {
+                         withSonarQubeEnv('SonarQube') { //there must be a tool named 'sonar' configured on Jenkins (/jenkins/configureTools)
+                        sh 'mvn sonar:sonar' //publish project quality on sonar
+}
+}
+}
 			 stage ('Sonar') {
                     steps {
                         testsonar()	
